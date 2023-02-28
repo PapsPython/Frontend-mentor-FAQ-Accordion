@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <section class="imagesection">
+      <!--<img src="images/bg-pattern-desktop.svg" alt="image of woman standing in front of a desktop">-->
+    </section>
+    <section class="questandans">
+      <h1> FAQ</h1>
+      <div id="faq1" class="faq">
+        <p> How many teams can I invite? </p>
+        <img src="images/icon-arrow-down.svg" alt="arrowicon">
+        <p id="expanded ans"></p>
+      </div>
+      <div class="faq">
+        <p id="faq2" data-drop="imgfaq2"> What is the maximum size of a file upload?</p>
+        <img src="images/icon-arrow-down.svg" alt="arrowicon" id="imgfaq2">
+        <p id="expandedans4faq2"></p>
+      </div>
+      <div class="faq">
+        <p id="faq3" data-drop="imgfaq3"> How do I reset my password?</p>
+        <img src="images/icon-arrow-down.svg" alt="arrowicon" id="imgfaq3">
+        <p id="expandedansthree"></p>
+      </div>
+      <div id="faq4" class="faq">
+        <p>Can I cancel my subscription?</p>
+        <img src="images/icon-arrow-down.svg" alt="arrowicon">
+        <p id="expanded ans"></p>
+      </div>
+      <div id="faq5" class="faq">
+        <p>Do you provide additional support?</p>
+        <img src="images/icon-arrow-down.svg" alt="arrowicon">
+        <p id="expanded ans"></p>
+      </div>
+    </section>
+  </main>
+
+  <picture class="heroimage">
+    <source media="(min-width:375px)" srcset="images/illustration-woman-online- 
+        desktop.svg" />
+    <source srcset="images/illustration-woman-online-mobile.svg" />
+    <img src="images/illustration-woman-online-desktop.svg" alt="woman with 
+        desktop in front of her" />
+  </picture>
+
+
+  <!--<div class="boxdesktop">
+    <img src="images/illustration-box-desktop.svg">
+  </div>-->
+
+
+
+  <script>
+
+    //capture data from database
+    /* images.forEach(function (image) {
+          image.addEventListener("click", function (e) {
+          const correspondingArr = faqs.filter(function(list){
+          return list.id == e.target.id} 
+         console.log(correspondingArr)
+         correspondingArr[0].id
+        
+           const p = document.querySelector(`p[data-drop="${correspondingArr[0].id}"]`);
+           const img = document.getElementById(`"${correspondingArr[0].id}"`)  
+           const answerParagraph = document.getElementById(`"expandedAns${correspondingArr[0].id}"`)
+                  
+            if (p.dataset.drop == e.target.id) {
+              img.classList.toggle("active")
+              p.classList.toggle("bold")
+              if (img.classList.contains("active")) {
+                answerParagraph.textContent = `${correspondingArr[0].answer}`
+              } else {
+                answerParagraph.textContent = ""
+              }
+            }
+         }
+       })
+        })*/
+
+    const answerParagraph = document.getElementById("expandedansthree")
+    const p = document.getElementById("faq3")
+    const img = document.getElementById("imgfaq3")
+
+    const images = Array.from(document.querySelectorAll(".faq"))
+
+    images.forEach(function (image) {
+      image.addEventListener("click", function (e) {
+        if (p.dataset.drop == e.target.id) {
+          img.classList.toggle("active")
+          p.classList.toggle("bold")
+          if (img.classList.contains("active")) {
+            answerParagraph.textContent = "I need answers"
+          } else {
+            answerParagraph.textContent = ""
+          }
+        }
+      })
+
+    })
+
+
+  </script>
+
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+</body>
+
+</html>
